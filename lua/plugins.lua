@@ -48,6 +48,49 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 	use "nvim-treesitter/nvim-treesitter"
 	use "ellisonleao/gruvbox.nvim"
+	
+	use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+	}
+
+	use 'neovim/nvim-lspconfig'
+
+	use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.4',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+
+	use {
+    "williamboman/mason.nvim"
+	}
+
+	use({
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!:).
+    run = "make install_jsregexp"
+})
+
+	use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+	use "lukas-reineke/indent-blankline.nvim"
+
+	use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
+	use 'folke/which-key.nvim'
+	use {
+    'norcalli/nvim-colorizer.lua'
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
