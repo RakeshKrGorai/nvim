@@ -91,10 +91,18 @@ return packer.startup(function(use)
     'norcalli/nvim-colorizer.lua'
   }
 
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
+  end
+
+	-- load modules
+  local modules = {
+    "ricing",
+  }
+
+  for _, mod in ipairs(modules) do
+    require("" .. mod)
   end
 end)
