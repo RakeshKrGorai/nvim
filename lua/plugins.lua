@@ -66,6 +66,12 @@ return packer.startup(function(use)
     "williamboman/mason.nvim"
 	}
 
+	use "hrsh7th/nvim-cmp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-path"
+	use "hrsh7th/cmp-cmdline"
+	use "saadparwaiz1/cmp_luasnip"
+
 	use({
     "L3MON4D3/LuaSnip",
     -- follow latest release.
@@ -73,6 +79,8 @@ return packer.startup(function(use)
     -- install jsregexp (optional!:).
     run = "make install_jsregexp"
 })
+	
+	use "rafamadriz/friendly-snippets"
 
 	use {
   'nvim-lualine/lualine.nvim',

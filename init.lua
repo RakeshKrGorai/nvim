@@ -1,1 +1,3 @@
-require("user.options")
+require("options")
+require("keymaps")
+require("plugins")
