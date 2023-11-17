@@ -1,5 +1,7 @@
 local configs = {
-	"colorscheme"
+	"whichkey",
+	"colorscheme",
+	"breadcrumb",
 }
 
 for _, config in ipairs(configs) do

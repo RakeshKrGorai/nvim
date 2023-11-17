@@ -74,6 +74,7 @@ return packer.startup(function(use)
 
 	use({
     "L3MON4D3/LuaSnip",
+		require("luasnip.loaders.from_vscode").lazy_load(),
     -- follow latest release.
     tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!:).
@@ -98,6 +99,18 @@ return packer.startup(function(use)
 	use {
     'norcalli/nvim-colorizer.lua'
   }
+
+	use 'nvim-tree/nvim-web-devicons'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+  }
+
+	use({
+    "loctvl842/breadcrumb.nvim",
+    requires = { "nvim-tree/nvim-web-devicons" },
+  })
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
