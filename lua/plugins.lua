@@ -72,14 +72,7 @@ return packer.startup(function(use)
 	use "hrsh7th/cmp-cmdline"
 	use "saadparwaiz1/cmp_luasnip"
 
-	use({
-    "L3MON4D3/LuaSnip",
-		require("luasnip.loaders.from_vscode").lazy_load(),
-    -- follow latest release.
-    tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!:).
-    run = "make install_jsregexp"
-})
+	use({"L3MON4D3/LuaSnip",})
 	
 	use "rafamadriz/friendly-snippets"
 
