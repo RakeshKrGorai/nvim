@@ -38,7 +38,6 @@ packer.init {
   },
 }
 
-
 -- Install your plugins here
 
 return packer.startup(function(use)

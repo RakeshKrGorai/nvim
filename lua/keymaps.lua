@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = false }
 
 local term_opts = { silent = true }
 
@@ -11,10 +11,20 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Navigate buffers
-keymap("n", "<TAB>", ":bnext<CR>", opts)											--Switch to next buffer file using Tab Key
-keymap("n", "<S-TAB>", ":bprevious<CR>", opts) 								--Switch to previous buffer(file) with Shift+Tab
-keymap("n", "<C-s>", ":w<CR>", opts) 													--save file with Ctrl+S
-keymap("n", "<leader>bd", ":bd<cr>", opts)										--close buffer with "Space + b + d"
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts)
+keymap("n", "<C-x>", ":q<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts)
+keymap("n", "<leader>q", ":NvimTreeClose<cr>:wq!<cr>", opts)
+keymap("n", "<leader>bd", ":bd<cr>", opts)
+keymap("n", "<leader>gc", ":w<CR>:!javac %<CR>", opts)
+keymap("n", "<leader>td", "wbi\"<ESC>wea\"<ESC>", opts)
+keymap("n", "<leader>cf", "ggVGy", opts)
+keymap("n", "<leader>cq", ":COQnow<cr>", opts)
+keymap("n", "<leader>sf", ":source %<cr>", opts)
+keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>tc", ":ColorizerToggle<cr>", opts)
 
 -- Visual --
 -- Stay in indent mode
