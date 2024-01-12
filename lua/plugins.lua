@@ -53,7 +53,9 @@ return packer.startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
 	}
 
-	use 'neovim/nvim-lspconfig'
+	use {
+    "williamboman/mason.nvim"
+}
 
 	use {
   'nvim-telescope/telescope.nvim', tag = '0.1.4',
@@ -61,15 +63,14 @@ return packer.startup(function(use)
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
-	use {
-    "williamboman/mason.nvim"
-	}
-
 	use "hrsh7th/nvim-cmp"
 	use "hrsh7th/cmp-buffer"
 	use "hrsh7th/cmp-path"
 	use "hrsh7th/cmp-cmdline"
 	use "saadparwaiz1/cmp_luasnip"
+
+	use "neovim/nvim-lspconfig" --enable LSP
+	use "hrsh7th/cmp-nvim-lsp"
 
 	use({"L3MON4D3/LuaSnip",})
 	

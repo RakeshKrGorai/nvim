@@ -13,8 +13,10 @@ vim.g.maplocalleader = " "
 -- Navigate buffers
 keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
-keymap("n", "<C-s>", ":w<CR>", opts)
-keymap("n", "<C-x>", ":q<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts) --Write content
+keymap("n", "<C-x>", ":wq<CR>", opts) --Quit file
+keymap("n", "<C-a>", "ggVG<CR>", opts) 
+keymap("v", "<C-c>", "y<CR>", opts) --Copy chunk easily
 keymap("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", opts)
 keymap("n", "<leader>q", ":NvimTreeClose<cr>:wq!<cr>", opts)
 keymap("n", "<leader>bd", ":bd<cr>", opts)
